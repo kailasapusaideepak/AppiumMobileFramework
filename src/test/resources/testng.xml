@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="AppiumMobileTestSuite" verbose="1">
+
+    <test name="Home Screen Tests">
+        <classes>
+            <class name="com.sdet.mobile.tests.HomePageTest"/>
+        </classes>
+    </test>
+
+    <test name="Gesture Tests">
+        <classes>
+            <class name="com.sdet.mobile.tests.ScrollSwipeTest"/>
+        </classes>
+    </test>
+
+</suite>
