@@ -62,15 +62,15 @@ jobs:
           done
 
       # ── 8. Boot emulator + run tests ─────────────────────────────────────────
-      #   api-level 31 = Android 12 (matches platform.version in config.properties)
-      #   x86_64 + swiftshader runs on ubuntu-latest without GPU
+      #   api-level 29 (Android 10) + default target: most stable combo on CI runners.
+      #   google_apis target is not reliably available on GitHub-hosted runners.
+      #   x86_64 + swiftshader_indirect runs without a GPU.
       - name: Run tests on Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 31
+          api-level: 29
           arch: x86_64
-          target: google_apis
-          profile: Nexus 6
+          target: default
           avd-name: test_avd
           emulator-options: >-
             -no-snapshot-save -no-window -gpu swiftshader_indirect
